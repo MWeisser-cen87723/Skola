@@ -1,4 +1,4 @@
-package com.github.martinweisser.logika;
+package com.github.martinweisser.Skola.logika;
 
 
 import org.junit.After;

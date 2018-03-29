@@ -2,11 +2,8 @@
  * Kontrola kódování: Příliš žluťoučký kůň úpěl ďábelské ódy. */
 package com.github.martinweisser.Skola.main;
 
-import com.github.martinweisser.logika.Hra;
-import com.github.martinweisser.logika.IHra;
-
-import com.github.martinweisser.logika.*;
-import com.github.martinweisser.ui.TextoveRozhrani;
+import com.github.martinweisser.Skola.logika.*;
+import com.github.martinweisser.Skola.ui.TextoveRozhrani;
 
 /*******************************************************************************
  * Třída  Start je hlavní třídou projektu,

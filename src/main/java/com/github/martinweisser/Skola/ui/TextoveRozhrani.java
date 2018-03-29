@@ -1,11 +1,11 @@
 /* Soubor je ulozen v kodovani UTF-8.
  * Kontrola kódování: Příliš žluťoučký kůň úpěl ďábelské ódy. */
-package com.github.martinweisser.ui;
+package com.github.martinweisser.Skola.ui;
 
 import java.io.*;
 import java.util.Scanner;
 
-import com.github.martinweisser.logika.IHra;
+import com.github.martinweisser.Skola.logika.IHra;
 
 /**
  * Class TextoveRozhrani

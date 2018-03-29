@@ -1,6 +1,6 @@
 /* Soubor je ulozen v kodovani UTF-8.
  * Kontrola kódování: Příliš žluťoučký kůň úpěl ďábelské ódy. */
-package com.github.martinweisser.logika;
+package com.github.martinweisser.Skola.logika;
 
 import java.util.HashMap;
 import java.util.Map;
