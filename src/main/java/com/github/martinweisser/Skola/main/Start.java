@@ -6,7 +6,7 @@ import com.github.martinweisser.logika.Hra;
 import com.github.martinweisser.logika.IHra;
 
 import com.github.martinweisser.logika.*;
-import com.github.martinweisser.uiText.TextoveRozhrani;
+import com.github.martinweisser.ui.TextoveRozhrani;
 
 /*******************************************************************************
  * Třída  Start je hlavní třídou projektu,
