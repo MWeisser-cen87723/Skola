@@ -12,7 +12,7 @@ import com.github.martinweisser.uiText.TextoveRozhrani;
  * Třída  Start je hlavní třídou projektu,
  * který představuje jednoduchou textovou adventuru určenou k dalším úpravám a rozšiřování
  *
- * @author     Martin Weisser, Jarmila Pavlíčková, Jan Říha
+ * @author     Martínek Weisser, Jarmila Pavlíčková, Jan Říha
  * @version    LS 2016/2017
  */
 public class Start
