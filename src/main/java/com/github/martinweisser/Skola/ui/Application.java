@@ -30,13 +30,8 @@ public class Application extends javafx.application.Application {
                 IHra hra = new Hra();
                 TextoveRozhrani ui = new TextoveRozhrani(hra);
                 try {
-					try {
-						ui.hraj();
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				} catch (Exception e) {
+					ui.hraj();
+				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
@@ -58,7 +53,8 @@ public class Application extends javafx.application.Application {
 		          .getResource("Home.fxml"));
 		Parent root = loader.load();
 
-		HomeController c = loader.getController();
+		HomeController controller = loader.getController();
+		controller.inicializuj(new  Hra());
 		
         primaryStage.setTitle("title");
         primaryStage.setScene(new Scene(root));
