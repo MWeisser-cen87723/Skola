@@ -13,7 +13,7 @@ import javafx.stage.Stage;
  * Při spuštění bez parametru konstruuje okno aplikace,
  * s parametrem -text se spouští v textovém režimu
  * 
- * @author Filip Vencovsky
+ * @author Filip Vencovsky, Martin Weisser
  *
  */
 public class Application extends javafx.application.Application {

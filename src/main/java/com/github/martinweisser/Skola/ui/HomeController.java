@@ -4,6 +4,7 @@ import com.github.martinweisser.Skola.logika.IHra;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+//import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.GridPane;
 
@@ -18,8 +19,10 @@ public class HomeController extends GridPane {
 	
 	@FXML private TextField vstupniText;
 	@FXML private TextArea vystup;
+	//@FXML private MenuItem konec;
 	
 	private IHra hra;
+	
 	
 	/**
 	 * metoda čte příkaz ze vstupního textového pole
@@ -33,6 +36,13 @@ public class HomeController extends GridPane {
 
 	}
 	
+	@FXML public void konecHry() {
+		vstupniText.setText("konec");
+		odesliPrikaz();
+	}
+	
+	
+	
 	/**
 	 * Metoda bude soužit pro předání objektu se spuštěnou hrou
 	 * kontroleru a zobrazí stav hry v grafice.
@@ -40,9 +50,14 @@ public class HomeController extends GridPane {
 	 */
 	public void inicializuj(IHra hra) {
 		vystup.setText(hra.vratUvitani());
-		//vystup.setText(hra.vratUvod());
+		//vystup.Text(hra.vratUvod());
 		vystup.setEditable(false);
 		this.hra = hra;
+		
+		if(hra.konecHry()) {
+			vystup.appendText("\n\n Konec hry \n");
+			vstupniText.setDisable(true);
+		}
 		
 	}
 
