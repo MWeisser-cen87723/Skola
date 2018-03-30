@@ -2,6 +2,9 @@ package com.github.martinweisser.Skola.ui;
 
 import com.github.martinweisser.Skola.logika.IHra;
 
+import java.util.Observable;
+import java.util.Observer;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 //import javafx.scene.control.MenuItem;
@@ -15,7 +18,7 @@ import javafx.scene.layout.GridPane;
  * @authors Filip Vencovsky, Martin Weisser
  *
  */
-public class HomeController extends GridPane {
+public class HomeController extends GridPane implements Observer {
 	
 	@FXML private TextField vstupniText;
 	@FXML private TextArea vystup;
@@ -33,12 +36,39 @@ public class HomeController extends GridPane {
 		vystup.appendText("\n----------\n"+vstupniText.getText()+"\n----------\n");
 		vystup.appendText(vystupPrikazu);
 		vstupniText.setText("");
+		
+		/*if(hra.konecHry()) {
+			vystup.appendText("\n\n Konec hry \n");
+			vstupniText.setEditable(false);
+		}*/
 
 	}
 	
-	@FXML public void konecHry() {
+	/**
+	 * metoda napíše příkaz konec do příkazového řádku
+	 * a zavolá matedu na zpracování příkazu
+	 */
+	/*@FXML public void konecHry() {
 		vstupniText.setText("konec");
 		odesliPrikaz();
+		vstupniText.setEditable(false);
+	}*/
+	
+	@FXML public void konecHry() {
+		hra.setKonecHry(true);
+		vystup.appendText("\n\n Konec hry \n");
+		vstupniText.setEditable(false);
+	}
+	
+	/**
+	 * metoda napíše příkaz začátek do příkazového řádku
+	 * a zavolá matedu na zpracování příkazu
+	 */
+	@FXML public void zacatekHry() {
+		hra.setKonecHry(true);
+		//hra.Hra();
+		vstupniText.setEditable(true);
+		vystup.setText(hra.vratUvitani());
 	}
 	
 	
@@ -50,14 +80,16 @@ public class HomeController extends GridPane {
 	 */
 	public void inicializuj(IHra hra) {
 		vystup.setText(hra.vratUvitani());
-		//vystup.Text(hra.vratUvod());
+		//vystup.appendText(hra.vratUvod());
 		vystup.setEditable(false);
 		this.hra = hra;
 		
-		if(hra.konecHry()) {
-			vystup.appendText("\n\n Konec hry \n");
-			vstupniText.setDisable(true);
-		}
+		
+	}
+
+	@Override
+	public void update(Observable arg0, Object arg1) {
+		// TODO Auto-generated method stub
 		
 	}
 

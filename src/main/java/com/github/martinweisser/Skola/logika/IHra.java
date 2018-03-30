@@ -58,6 +58,10 @@ public interface IHra
      */
      public HerniPlan getHerniPlan();
      
-   
-
+    // public void Hra();
+     
+    
+     public void setKonecHry(boolean konecHry);
+     
+     
 }

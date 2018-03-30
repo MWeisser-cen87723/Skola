@@ -33,7 +33,7 @@
         <menus>
           <Menu mnemonicParsing="false" text="Soubor">
             <items>
-              <MenuItem mnemonicParsing="false" text="Nová hra" />
+              <MenuItem mnemonicParsing="false" onAction="#zacatekHry" onMenuValidation="#zacatekHry" text="Nová hra" />
               <MenuItem fx:id="konec" mnemonicParsing="false" onAction="#konecHry" onMenuValidation="#konecHry" text="Konec Hry" />
             </items>
           </Menu>
