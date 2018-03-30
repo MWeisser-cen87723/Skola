@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.martinweisser.Skola.ui.HomeController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.martinweisser.Skola.ui.HomeController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -37,7 +37,7 @@
               <MenuItem mnemonicParsing="false" text="Konec Hry" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Help">
+          <Menu mnemonicParsing="false" text="Nápověda">
             <items>
               <MenuItem mnemonicParsing="false" text="About" />
             </items>
@@ -54,8 +54,8 @@
       </ImageView>
       <VBox GridPane.columnIndex="1" GridPane.rowIndex="2">
          <children>
-            <Label text="Obsah batohu" />
-            <ListView prefHeight="200.0" prefWidth="200.0">
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="293.0" text="Obsah ledvinky" textAlignment="CENTER" />
+            <ListView prefHeight="199.0" prefWidth="293.0">
                <contextMenu>
                   <ContextMenu>
                     <items>
@@ -72,7 +72,7 @@
       </VBox>
       <VBox GridPane.rowIndex="2">
          <children>
-            <Label text="Postavy" />
+            <Label alignment="CENTER" prefHeight="17.0" prefWidth="294.0" text="Postavy" />
             <ListView prefHeight="200.0" prefWidth="200.0">
                <VBox.margin>
                   <Insets />
@@ -85,7 +85,7 @@
       </VBox>
       <VBox GridPane.columnIndex="2" GridPane.rowIndex="2">
          <children>
-            <Label text="Věci v místnosti" />
+            <Label alignment="CENTER" prefHeight="17.0" prefWidth="293.0" text="Věci v místnosti" textAlignment="CENTER" />
             <ListView prefHeight="200.0" prefWidth="200.0" />
          </children>
          <GridPane.margin>
@@ -93,19 +93,28 @@
          </GridPane.margin>
       </VBox>
       <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-      <VBox GridPane.columnSpan="2147483647" GridPane.rowIndex="3">
+      <VBox prefHeight="44.0" prefWidth="190.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="3">
          <children>
             <Label text="Zadej příkaz" />
-            <TextField fx:id="vstupniText" onAction="#odesliPrikaz" />
+            <TextField fx:id="vstupniText" onAction="#odesliPrikaz" prefHeight="27.0" prefWidth="610.0" />
          </children>
          <GridPane.margin>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </GridPane.margin>
       </VBox>
-      <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="1">
+      <TextArea fx:id="vystup" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="1">
          <GridPane.margin>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </GridPane.margin>
       </TextArea>
+      <VBox prefHeight="0.0" prefWidth="294.0" GridPane.rowIndex="3">
+         <children>
+            <Label text="Vyber příkaz" />
+            <ListView prefHeight="44.0" prefWidth="294.0" />
+         </children>
+         <GridPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </GridPane.margin>
+      </VBox>
    </children>
 </GridPane>

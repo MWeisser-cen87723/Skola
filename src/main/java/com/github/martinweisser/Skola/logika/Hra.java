@@ -39,7 +39,8 @@ public class Hra implements IHra {
      * Vrátí úvodní zprávu pro hráče.
      */
     public String vratUvitani() {
-         return "HRA ZACHRAŇ ŠKOLU" +  "\n";
+         //return "HRA ZACHRAŇ ŠKOLU" +  "\n";
+         return "\n" + herniPlan.getAktualniLokace().dlouhyPopis() + "\n" ; //dočasné řešení
     }
     
     public String vratUvod() {
@@ -57,8 +58,8 @@ public class Hra implements IHra {
         catch(InterruptedException ex){
              Thread.currentThread().interrupt();
         }
-         
-        return "\n" + herniPlan.getAktualniLokace().dlouhyPopis() + "\n" ;
+         return null;
+        //return "\n" + herniPlan.getAktualniLokace().dlouhyPopis() + "\n" ;
     }
        
     /**
