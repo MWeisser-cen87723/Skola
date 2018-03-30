@@ -73,7 +73,7 @@
       <VBox GridPane.rowIndex="2">
          <children>
             <Label alignment="CENTER" prefHeight="17.0" prefWidth="294.0" text="Postavy" />
-            <ListView prefHeight="200.0" prefWidth="200.0">
+            <ListView fx:id="postavy" prefHeight="200.0" prefWidth="200.0">
                <VBox.margin>
                   <Insets />
                </VBox.margin>

@@ -18,15 +18,17 @@ import javafx.scene.layout.GridPane;
  * Kontroler, který zprostředkovává komunikaci mezi grafikou
  * a logikou adventury
  * @param <Veci>
+ * @param <Postavy>
  * 
  * @authors Filip Vencovsky, Martin Weisser
  *
  */
-public class HomeController<Veci> extends GridPane implements Observer {
+public class HomeController<Veci, Postavy> extends GridPane implements Observer {
 	
 	@FXML private TextField vstupniText;
 	@FXML private TextArea vystup;
 	@FXML private ListView<Veci> mistnost;
+	@FXML private ListView<Postavy> postavy;
 	//@FXML private MenuItem konec;
 	
 	private IHra hra;
@@ -97,6 +99,8 @@ public class HomeController<Veci> extends GridPane implements Observer {
 	public void update(Observable arg0, Object arg1) {
 		mistnost.getItems().clear();
 		mistnost.getItems().add((Veci) hra.getHerniPlan().getAktualniLokace().seznamPredmetu());
+		postavy.getItems().clear();
+		postavy.getItems().add((Postavy) hra.getHerniPlan().getAktualniLokace().seznamPostav());
 		
 	}
 
