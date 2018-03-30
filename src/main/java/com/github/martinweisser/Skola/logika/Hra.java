@@ -122,7 +122,7 @@ public class Hra implements IHra {
      */
     public void setKonecHry(boolean konecHry) {
         this.konecHry = konecHry;
-        konecHry = true;
+        //konecHry = true;
     }
     
     /**

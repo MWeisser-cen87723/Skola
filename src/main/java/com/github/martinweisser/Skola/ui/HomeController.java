@@ -1,12 +1,15 @@
 package com.github.martinweisser.Skola.ui;
 
 import com.github.martinweisser.Skola.logika.IHra;
+//import com.github.martinweisser.Skola.logika.Lokace;
 
 import java.util.Observable;
 import java.util.Observer;
+import java.util.Vector;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ListView;
 //import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.GridPane;
@@ -14,17 +17,20 @@ import javafx.scene.layout.GridPane;
 /**
  * Kontroler, který zprostředkovává komunikaci mezi grafikou
  * a logikou adventury
+ * @param <Veci>
  * 
  * @authors Filip Vencovsky, Martin Weisser
  *
  */
-public class HomeController extends GridPane implements Observer {
+public class HomeController<Veci> extends GridPane implements Observer {
 	
 	@FXML private TextField vstupniText;
 	@FXML private TextArea vystup;
+	@FXML private ListView<Veci> mistnost;
 	//@FXML private MenuItem konec;
 	
 	private IHra hra;
+	
 	
 	
 	/**
@@ -83,13 +89,14 @@ public class HomeController extends GridPane implements Observer {
 		//vystup.appendText(hra.vratUvod());
 		vystup.setEditable(false);
 		this.hra = hra;
-		
+		hra.getHerniPlan().addObserver(this);
 		
 	}
 
 	@Override
 	public void update(Observable arg0, Object arg1) {
-		// TODO Auto-generated method stub
+		mistnost.getItems().clear();
+		mistnost.getItems().add((Veci) hra.getHerniPlan().getAktualniLokace().seznamPredmetu());
 		
 	}
 

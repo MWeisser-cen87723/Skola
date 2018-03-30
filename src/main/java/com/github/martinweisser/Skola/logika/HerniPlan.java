@@ -2,6 +2,9 @@
  * Kontrola kódování: Příliš žluťoučký kůň úpěl ďábelské ódy. */
 package com.github.martinweisser.Skola.logika;
 
+import java.util.Observable;
+
+
 /**
  * Class HerniPlan - třída představující mapu a stav adventury.
  * 
@@ -12,7 +15,7 @@ package com.github.martinweisser.Skola.logika;
  * @author     Martin Weisser
  * @version    LS 2016/2017
  */
-public class HerniPlan {
+public class HerniPlan extends Observable {
     private static final String NAZEV_VITEZNE_LOKACE = "vychod";
     
     private Lokace aktualniLokace;
@@ -154,6 +157,8 @@ public class HerniPlan {
      */
     public void setAktualniLokace(Lokace lokace) {
        aktualniLokace = lokace;
+       setChanged();
+       notifyObservers();
     }
     
     /**
