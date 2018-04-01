@@ -11,6 +11,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
@@ -44,14 +45,6 @@
           </Menu>
         </menus>
       </MenuBar>
-      <ImageView fitHeight="450.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-         <image>
-            <Image url="@planskoly.png" />
-         </image>
-         <GridPane.margin>
-            <Insets />
-         </GridPane.margin>
-      </ImageView>
       <VBox GridPane.columnIndex="1" GridPane.rowIndex="2">
          <children>
             <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="293.0" text="Obsah ledvinky" textAlignment="CENTER" />
@@ -118,10 +111,19 @@
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </GridPane.margin>
       </VBox>
-      <ImageView fx:id="student" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@studentik.png" />
-         </image>
-      </ImageView>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+         <children>
+            <ImageView fitHeight="450.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@planskoly.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="student">
+               <image>
+                  <Image url="@studentik.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
    </children>
 </GridPane>
