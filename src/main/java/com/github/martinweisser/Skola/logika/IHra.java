@@ -63,5 +63,7 @@ public interface IHra
     
      public void setKonecHry(boolean konecHry);
      
+     public SeznamPrikazu getSeznamPrikazu();
+     
      
 }

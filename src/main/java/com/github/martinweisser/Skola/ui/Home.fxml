@@ -25,13 +25,13 @@
   <rowConstraints>
     <RowConstraints vgrow="NEVER" />
     <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
-    <RowConstraints vgrow="NEVER" />
-      <RowConstraints vgrow="NEVER" />
+    <RowConstraints maxHeight="284.2889404296875" minHeight="183.83154296875" prefHeight="265.03753662109375" vgrow="NEVER" />
+      <RowConstraints maxHeight="158.66845703125" minHeight="58.7110595703125" prefHeight="77.96246337890625" vgrow="NEVER" />
   </rowConstraints>
    <children>
       <MenuBar GridPane.columnSpan="3">
         <menus>
-          <Menu mnemonicParsing="false" text="Soubor">
+          <Menu mnemonicParsing="false" text="Hra">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#zacatekHry" onMenuValidation="#zacatekHry" text="Nová hra" />
               <MenuItem fx:id="konec" mnemonicParsing="false" onAction="#konecHry" onMenuValidation="#konecHry" text="Konec Hry" />
@@ -55,7 +55,7 @@
       <VBox GridPane.columnIndex="1" GridPane.rowIndex="2">
          <children>
             <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="293.0" text="Obsah ledvinky" textAlignment="CENTER" />
-            <ListView prefHeight="199.0" prefWidth="293.0">
+            <ListView prefHeight="199.0" prefWidth="293.0" style="-fx-background-image: ledvinka.jpg;">
                <contextMenu>
                   <ContextMenu>
                     <items>
@@ -86,7 +86,9 @@
       <VBox GridPane.columnIndex="2" GridPane.rowIndex="2">
          <children>
             <Label alignment="CENTER" prefHeight="17.0" prefWidth="293.0" text="Věci v místnosti" textAlignment="CENTER" />
-            <ListView fx:id="mistnost" prefHeight="200.0" prefWidth="200.0" />
+            <ListView fx:id="mistnost" prefHeight="102.0" prefWidth="293.0" />
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="291.0" text="Herní upozornění:" textAlignment="CENTER" />
+            <TextArea fx:id="vycerpani" prefHeight="95.0" prefWidth="293.0" />
          </children>
          <GridPane.margin>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
@@ -96,7 +98,7 @@
       <VBox prefHeight="44.0" prefWidth="190.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="3">
          <children>
             <Label text="Zadej příkaz" />
-            <TextField fx:id="vstupniText" onAction="#odesliPrikaz" prefHeight="27.0" prefWidth="610.0" />
+            <TextField fx:id="vstupniText" onAction="#odesliPrikaz" prefHeight="35.0" prefWidth="626.0" />
          </children>
          <GridPane.margin>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
@@ -110,7 +112,6 @@
       <VBox prefHeight="0.0" prefWidth="294.0" GridPane.rowIndex="3">
          <children>
             <Label text="Vyber příkaz" />
-            <ListView prefHeight="44.0" prefWidth="294.0" />
          </children>
          <GridPane.margin>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

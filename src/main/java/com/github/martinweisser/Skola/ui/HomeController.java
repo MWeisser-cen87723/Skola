@@ -2,10 +2,11 @@ package com.github.martinweisser.Skola.ui;
 
 import com.github.martinweisser.Skola.logika.IHra;
 //import com.github.martinweisser.Skola.logika.Lokace;
+import com.github.martinweisser.Skola.logika.SeznamPrikazu;
 
 import java.util.Observable;
 import java.util.Observer;
-import java.util.Vector;
+//import java.util.Vector;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -19,19 +20,23 @@ import javafx.scene.layout.GridPane;
  * a logikou adventury
  * @param <Veci>
  * @param <Postavy>
+ * @param <Prikazy>
  * 
  * @authors Filip Vencovsky, Martin Weisser
  *
  */
-public class HomeController<Veci, Postavy> extends GridPane implements Observer {
+public class HomeController<Veci, Postavy, Prikazy> extends GridPane implements Observer {
 	
 	@FXML private TextField vstupniText;
 	@FXML private TextArea vystup;
 	@FXML private ListView<Veci> mistnost;
 	@FXML private ListView<Postavy> postavy;
+	@FXML private ListView<Prikazy> prikazy;
+	@FXML private TextArea vycerpani;
 	//@FXML private MenuItem konec;
 	
 	private IHra hra;
+	private SeznamPrikazu seznampr;
 	
 	
 	
@@ -74,9 +79,23 @@ public class HomeController<Veci, Postavy> extends GridPane implements Observer 
 	 */
 	@FXML public void zacatekHry() {
 		hra.setKonecHry(true);
-		//hra.Hra();
 		vstupniText.setEditable(true);
 		vystup.setText(hra.vratUvitani());
+	}
+	
+	/**
+	 * metoda vypíše do textArea vycerpani
+	 * míru vyčerpání
+	 */
+	public void vycerpani(IHra hra) {
+		this.hra = hra;
+		vycerpani.clear();
+		vycerpani.setEditable(false);
+		if(hra.getHerniPlan().getPruchod() < 5) {
+			vycerpani.setText("Míra vyčerpání: " + hra.getHerniPlan().getPruchod());
+		} else {
+			vycerpani.setText("Míra vyčerpání: " + hra.getHerniPlan().getPruchod() + "\n" + "Měl by jsi doplnit energii!");
+		}
 	}
 	
 	
@@ -87,11 +106,14 @@ public class HomeController<Veci, Postavy> extends GridPane implements Observer 
 	 * @param objekt spuštěné hry
 	 */
 	public void inicializuj(IHra hra) {
+		vystup.clear();
 		vystup.setText(hra.vratUvitani());
 		//vystup.appendText(hra.vratUvod());
 		vystup.setEditable(false);
 		this.hra = hra;
 		hra.getHerniPlan().addObserver(this);
+		vstupniText.setText("");
+		update(null, hra);
 		
 	}
 
@@ -101,6 +123,9 @@ public class HomeController<Veci, Postavy> extends GridPane implements Observer 
 		mistnost.getItems().add((Veci) hra.getHerniPlan().getAktualniLokace().seznamPredmetu());
 		postavy.getItems().clear();
 		postavy.getItems().add((Postavy) hra.getHerniPlan().getAktualniLokace().seznamPostav());
+		//prikazy.getItems().add((Prikazy) hra.getSeznamPrikazu());
+		vycerpani(hra);
+		
 		
 	}
 
