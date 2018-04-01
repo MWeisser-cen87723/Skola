@@ -2,8 +2,11 @@
  * Kontrola kódování: Příliš žluťoučký kůň úpěl ďábelské ódy. */
 package com.github.martinweisser.Skola.logika;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Enumeration;
 import java.util.Set;
 import java.util.HashSet;
 import java.util.List;
@@ -32,6 +35,7 @@ public class Lokace {
     private Map<String, Predmet> predmety; // kazdy Predmet se da dohledat podle jmena
     private Map<String, Postava> postavy;
     public List <Postava> seznamPostav;
+    //public String[] poleVychodu;
     
 
     /**
@@ -115,6 +119,7 @@ public class Lokace {
     public String getNazev() {
         return nazev;       
     }
+    
 
     /**
      * Vrací "dlouhý" popis lokace, který může vypadat následovně: Jsi v
@@ -192,6 +197,22 @@ public class Lokace {
     public Collection<Lokace> getVychody() {
         return Collections.unmodifiableCollection(vychody);
     }
+    
+    
+    /**
+     * Každý východ dostupný v aktuální lokaci přidá do pole.
+     *
+     * @return    pole dostupných východů v aktuální lokaci
+     */
+    public ArrayList<String> seznamVychodu() {
+    		ArrayList<String> poleVychodu = new ArrayList<String>();
+    		for (Lokace sousedni : vychody) {
+               poleVychodu.add(sousedni.getNazev());
+            }
+    		return poleVychodu;
+	}
+		
+	
     
     /**
      * Metoda vkládá předmět do lokace
