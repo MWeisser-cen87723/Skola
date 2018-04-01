@@ -1,6 +1,7 @@
 package com.github.martinweisser.Skola.ui;
 
 import com.github.martinweisser.Skola.logika.IHra;
+import com.github.martinweisser.Skola.logika.Predmet;
 //import com.github.martinweisser.Skola.logika.Lokace;
 import com.github.martinweisser.Skola.logika.SeznamPrikazu;
 
@@ -14,10 +15,8 @@ import javafx.scene.control.ListView;
 //import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.GridPane;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.image.ImageView;
+
 
 /**
  * Kontroler, který zprostředkovává komunikaci mezi grafikou
@@ -35,15 +34,19 @@ public class HomeController<Veci, Postavy, Prikazy, Vychody> extends GridPane im
 	@FXML private TextField vstupniText;
 	@FXML private TextArea vystup;
 	@FXML private ListView<Veci> mistnost;
-	@FXML private ListView<Postavy> postavy;
 	@FXML private ListView<Prikazy> prikazy;
 	@FXML private TextArea vycerpani;
 	@FXML private ListView<Vychody>  vychody;
 	@FXML private ImageView student;
-	//@FXML private MenuItem konec;
+	@FXML private ImageView  klice;
+	@FXML private ImageView  penezenka;
+	@FXML private ImageView  desetikoruna;
+	@FXML private ImageView  kyblik;
+	@FXML private ImageView  bufetacka;
+	@FXML private ImageView  ucitel;
 	
 	private IHra hra;
-	private SeznamPrikazu seznampr;
+	//private SeznamPrikazu seznampr;
 	
 	
 	
@@ -133,7 +136,12 @@ public class HomeController<Veci, Postavy, Prikazy, Vychody> extends GridPane im
 	 * @param objekt spuštěné hry
 	 */
 	public void inicializuj(IHra hra) {
-		noveOkno();
+		klice.setVisible(false);
+		penezenka.setVisible(false);
+		kyblik.setVisible(false);
+		desetikoruna.setVisible(false);
+		bufetacka.setVisible(false);
+		ucitel.setVisible(true);
 		vystup.clear();
 		vystup.setText(hra.vratUvitani());
 		//vystup.appendText(hra.vratUvod());
@@ -151,8 +159,6 @@ public class HomeController<Veci, Postavy, Prikazy, Vychody> extends GridPane im
 	public void update(Observable arg0, Object arg1) {
 		mistnost.getItems().clear();
 		mistnost.getItems().add((Veci) hra.getHerniPlan().getAktualniLokace().seznamPredmetu());
-		postavy.getItems().clear();
-		postavy.getItems().add((Postavy) hra.getHerniPlan().getAktualniLokace().seznamPostav());
 		//prikazy.getItems().add((Prikazy) hra.getSeznamPrikazu());
 		vycerpani(hra);
 		vychody.getItems().clear();
@@ -160,7 +166,24 @@ public class HomeController<Veci, Postavy, Prikazy, Vychody> extends GridPane im
 		student.setX(hra.getHerniPlan().getAktualniLokace().getX());
 		student.setY(hra.getHerniPlan().getAktualniLokace().getY());
 		
+		if (hra.getHerniPlan().getLedvinka().obsahujePredmet("klice")) {
+			klice.setVisible(true);
+		} else if (hra.getHerniPlan().getLedvinka().obsahujePredmet("penezenka")) {
+			penezenka.setVisible(true);
+		} else if (hra.getHerniPlan().getLedvinka().obsahujePredmet("desetikoruna")) {
+			desetikoruna.setVisible(true);
+		} else if (hra.getHerniPlan().getRuka().obsahujePredmet("kyblik")) {
+			kyblik.setVisible(true);
+		}
 		
+		if (hra.getHerniPlan().jestliBufetacka()) {
+			bufetacka.setVisible(true);
+		} else if (hra.getHerniPlan().jestliUcitel()) {
+			ucitel.setVisible(true);
 		}
 	}
+	
+	}
+
+	
 

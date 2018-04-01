@@ -2,6 +2,9 @@
  * Kontrola kódování: Příliš žluťoučký kůň úpěl ďábelské ódy. */
 package com.github.martinweisser.Skola.logika;
 
+import java.util.Observable;
+
+import com.github.martinweisser.Skola.ui.HomeController;;
 
 /**
  * Třída Hra - třída představující logiku adventury.
@@ -110,6 +113,7 @@ public class Hra implements IHra {
         else {
             textKVypsani="Nevím co tím myslíš? Tento příkaz neznám. ";
         }
+        
         return textKVypsani;
     }
     

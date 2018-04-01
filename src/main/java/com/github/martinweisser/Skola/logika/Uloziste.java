@@ -105,6 +105,13 @@ public class Uloziste
         }        
         return false;
     }
+    
+    /**
+     * Metoda vrátí předměty nacházející se v daném úložišti
+     */  
+    public Set<Predmet> getPredmety( ) {
+    		return seznamPredmetu;
+    }
         
 
 }

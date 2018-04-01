@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.ContextMenu?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Menu?>
@@ -19,9 +18,9 @@
 
 <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.martinweisser.Skola.ui.HomeController">
   <columnConstraints>
-    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints />
   </columnConstraints>
   <rowConstraints>
     <RowConstraints vgrow="NEVER" />
@@ -35,7 +34,7 @@
           <Menu mnemonicParsing="false" text="Hra">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#zacatekHry" onMenuValidation="#zacatekHry" text="Nová hra" />
-              <MenuItem fx:id="konec" mnemonicParsing="false" onAction="#konecHry" onMenuValidation="#konecHry" text="Konec Hry" />
+              <MenuItem mnemonicParsing="false" onAction="#konecHry" onMenuValidation="#konecHry" text="Konec Hry" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Nápověda">
@@ -45,19 +44,34 @@
           </Menu>
         </menus>
       </MenuBar>
-      <VBox GridPane.columnIndex="1" GridPane.rowIndex="2">
+      <VBox prefHeight="148.0" prefWidth="211.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="293.0" text="Obsah ledvinky" textAlignment="CENTER" />
-            <ListView prefHeight="199.0" prefWidth="293.0">
-               <contextMenu>
-                  <ContextMenu>
-                    <items>
-                      <MenuItem mnemonicParsing="false" text="Polož" />
-                        <MenuItem mnemonicParsing="false" text="Dej" />
-                    </items>
-                  </ContextMenu>
-               </contextMenu>
-            </ListView>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="desetikoruna" layoutX="27.0" layoutY="108.0" style="visibility: false;">
+                     <image>
+                        <Image url="@desetikoruna.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="penezenka" layoutX="9.0" layoutY="36.0" style="visibility: false;">
+                     <image>
+                        <Image url="@penezenka.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="klice" layoutX="96.0" layoutY="44.0" style="visibility: false;">
+                     <image>
+                        <Image url="@klice.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="19.0" layoutY="1.0" prefHeight="18.0" prefWidth="124.0" text="Obsah ledvinky" textAlignment="CENTER" />
+                  <Label layoutX="189.0" layoutY="1.0" text="Co držím v ruce" />
+                  <ImageView fx:id="kyblik" layoutX="217.0" layoutY="49.0" style="visibility: false;">
+                     <image>
+                        <Image url="@bucket.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
          </children>
          <GridPane.margin>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
@@ -65,12 +79,21 @@
       </VBox>
       <VBox GridPane.rowIndex="2">
          <children>
-            <Label alignment="CENTER" prefHeight="17.0" prefWidth="294.0" text="Postavy" />
-            <ListView fx:id="postavy" prefHeight="200.0" prefWidth="200.0">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-            </ListView>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="294.0" text="Postavy" />
+                  <ImageView fx:id="bufetacka" layoutX="158.0" layoutY="43.0" style="visibility: false;">
+                     <image>
+                        <Image url="@bufetacka.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="ucitel" layoutX="16.0" layoutY="15.0" style="visibility: false;">
+                     <image>
+                        <Image url="@ucitel.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
          </children>
          <GridPane.margin>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
