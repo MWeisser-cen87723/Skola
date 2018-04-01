@@ -42,7 +42,7 @@ public class HerniPlan extends Observable {
      * Vytváří jednotlivé lokace a propojuje je pomocí východů.
      * Jako výchozí aktuální lokaci nastaví domeček.
      */
-    private void zalozLokaceHry() {
+    public void zalozLokaceHry() {
         Lokace ucebna = new Lokace("ucebna","počítačová učebna, kde nastal skrat", 120.0, 50.0);
         Lokace chodba = new Lokace("chodba", "chodba", 120.0, 140.0);
         Lokace bufet = new Lokace("bufet","bufet, místo dobrot a laskomin", 50.0, 135.0);

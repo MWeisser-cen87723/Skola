@@ -48,7 +48,7 @@
       <VBox GridPane.columnIndex="1" GridPane.rowIndex="2">
          <children>
             <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="293.0" text="Obsah ledvinky" textAlignment="CENTER" />
-            <ListView prefHeight="199.0" prefWidth="293.0" style="-fx-background-image: ledvinka.jpg;">
+            <ListView prefHeight="199.0" prefWidth="293.0">
                <contextMenu>
                   <ContextMenu>
                     <items>

@@ -14,6 +14,8 @@ import javafx.scene.control.ListView;
 //import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.image.ImageView;
 
@@ -92,9 +94,12 @@ public class HomeController<Veci, Postavy, Prikazy, Vychody> extends GridPane im
 	 * a zavolá matedu na zpracování příkazu
 	 */
 	@FXML public void zacatekHry() {
-		hra.setKonecHry(true);
+		hra.setKonecHry(false);
+		hra.getHerniPlan().zalozLokaceHry();
+		hra.getHerniPlan().setPruchod();
 		vstupniText.setEditable(true);
 		vystup.setText(hra.vratUvitani());
+		inicializuj(hra);
 	}
 	
 	/**
@@ -113,8 +118,14 @@ public class HomeController<Veci, Postavy, Prikazy, Vychody> extends GridPane im
 	}
 	
 	
+	/*
+	public void noveOkno() {
+		Stage dialog = new Stage();
+		dialog.initModality(Modality.APPLICATION_MODAL);
+		
 	
-	
+	}
+	*/
 	
 	/**
 	 * Metoda bude soužit pro předání objektu se spuštěnou hrou
@@ -122,6 +133,7 @@ public class HomeController<Veci, Postavy, Prikazy, Vychody> extends GridPane im
 	 * @param objekt spuštěné hry
 	 */
 	public void inicializuj(IHra hra) {
+		noveOkno();
 		vystup.clear();
 		vystup.setText(hra.vratUvitani());
 		//vystup.appendText(hra.vratUvod());
