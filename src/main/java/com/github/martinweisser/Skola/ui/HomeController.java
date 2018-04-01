@@ -1,7 +1,6 @@
 package com.github.martinweisser.Skola.ui;
 
 import com.github.martinweisser.Skola.logika.IHra;
-//import com.github.martinweisser.Skola.logika.Lokace;
 import com.github.martinweisser.Skola.logika.SeznamPrikazu;
 
 import java.util.Observable;
@@ -46,9 +45,6 @@ public class HomeController < Veci, Postavy, Prikazy, Vychody > extends GridPane
 
     private IHra hra;
 
-    private String ucitel;
-    private String bufetacka;
-
     //private SeznamPrikazu seznampr;
 
 
@@ -69,26 +65,69 @@ public class HomeController < Veci, Postavy, Prikazy, Vychody > extends GridPane
         }*/
 
     }
-
+    
+    
     /**
-     * metoda vypíše zvolenou hodntu
-     * do příkazového pole
+     * metoda napíše příkaz vezmi do textového pole
      */
-    @FXML public void zvolenVychod() {
-        vstupniText.appendText(vychody.getSelectionModel().toString());
+    @FXML public void prikazVezmi() {
+    		vstupniText.setText("vezmi");
     }
-
+    
+    /**
+     * metoda napíše příkaz jdi do textového pole
+     */
+    @FXML public void prikazJdi() {
+    		vstupniText.setText("jdi");
+    }
+    
+    /**
+     * metoda napíše příkaz použij do textového pole
+     */
+    @FXML public void prikazPouzij() {
+    		vstupniText.setText("pouzij");
+    }
+    
+    /**
+     * metoda napíše příkaz napoveda do textového pole
+     */
+    @FXML public void prikazNapoveda() {
+    		vstupniText.setText("napoveda");
+    }
+    
+    /**
+     * metoda napíše příkaz promluv do textového pole
+     */
+    @FXML public void prikazPromluv() {
+    		vstupniText.setText("promluv");
+    }
+    
+    /**
+     * metoda napíše příkaz konec do textového pole
+     */
+    @FXML public void prikazKonec() {
+    		vstupniText.setText("konec");
+    }
+    
+    /**
+     * metoda napíše příkaz zahod do textového pole
+     */
+    @FXML public void prikazZahod() {
+    		vstupniText.setText("zahod");
+    }
+    
+    /**
+     * metoda napíše příkaz prozkoumej do textového pole
+     */
+    @FXML public void prikazProzkoumej() {
+    		vstupniText.setText("prozkoumej");
+    }
+    
 
     /**
      * metoda napíše příkaz konec do příkazového řádku
      * a zavolá matedu na zpracování příkazu
      */
-    /*@FXML public void konecHry() {
-    	vstupniText.setText("konec");
-    	odesliPrikaz();
-    	vstupniText.setEditable(false);
-    }*/
-
     @FXML public void konecHry() {
         hra.setKonecHry(true);
         vystup.appendText("\n\n Konec hry \n");
@@ -101,6 +140,8 @@ public class HomeController < Veci, Postavy, Prikazy, Vychody > extends GridPane
      */
     @FXML public void zacatekHry() {
         hra.setKonecHry(false);
+        hra.getHerniPlan().getLedvinka().seznamPredmetu.clear();
+        hra.getHerniPlan().getRuka().seznamPredmetu.clear();
         hra.getHerniPlan().zalozLokaceHry();
         hra.getHerniPlan().setPruchod();
         vstupniText.setEditable(true);
@@ -139,12 +180,6 @@ public class HomeController < Veci, Postavy, Prikazy, Vychody > extends GridPane
      * @param objekt spuštěné hry
      */
     public void inicializuj(IHra hra) {
-        klice.setVisible(false);
-        penezenka.setVisible(false);
-        kyblik.setVisible(false);
-        desetikoruna.setVisible(false);
-        bufetackaIm.setVisible(false);
-        ucitelIm.setVisible(true);
         vystup.clear();
         vystup.setText(hra.vratUvitani());
         //vystup.appendText(hra.vratUvod());
@@ -164,8 +199,6 @@ public class HomeController < Veci, Postavy, Prikazy, Vychody > extends GridPane
         mistnost.getItems().add((Veci) hra.getHerniPlan().getAktualniLokace().seznamPredmetu());
         //prikazy.getItems().add((Prikazy) hra.getSeznamPrikazu());
         vycerpani(hra);
-        vychody.getItems().clear();
-        vychody.getItems().add((Vychody) hra.getHerniPlan().getAktualniLokace().getVychodyNazev());
         student.setX(hra.getHerniPlan().getAktualniLokace().getX());
         student.setY(hra.getHerniPlan().getAktualniLokace().getY());
         updatePostavy();
