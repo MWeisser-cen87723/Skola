@@ -2,11 +2,9 @@
  * Kontrola kódování: Příliš žluťoučký kůň úpěl ďábelské ódy. */
 package com.github.martinweisser.Skola.logika;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Enumeration;
 import java.util.Set;
 import java.util.HashSet;
 import java.util.List;
@@ -35,7 +33,6 @@ public class Lokace {
     private Map<String, Predmet> predmety; // kazdy Predmet se da dohledat podle jmena
     private Map<String, Postava> postavy;
     public List <Postava> seznamPostav;
-    //public String[] poleVychodu;
     
 
     /**
@@ -200,17 +197,17 @@ public class Lokace {
     
     
     /**
-     * Každý východ dostupný v aktuální lokaci přidá do pole.
+     * Každý východ dostupný v aktuální lokaci přidá do kolekce.
      *
-     * @return    pole dostupných východů v aktuální lokaci
+     * @return    kolekce dostupných východů v aktuální lokaci
      */
-    public ArrayList<String> seznamVychodu() {
-    		ArrayList<String> poleVychodu = new ArrayList<String>();
-    		for (Lokace sousedni : vychody) {
-               poleVychodu.add(sousedni.getNazev());
-            }
-    		return poleVychodu;
-	}
+    public Collection<String> getVychodyNazev() {
+    		List<String> list = new ArrayList<>();
+    		for(Lokace lokace:vychody){
+    			list.add(lokace.getNazev());
+    		}
+    		return list;
+    }
 		
 	
     
