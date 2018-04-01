@@ -14,6 +14,8 @@ import javafx.scene.control.ListView;
 //import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.GridPane;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.image.ImageView;
 
 /**
  * Kontroler, který zprostředkovává komunikaci mezi grafikou
@@ -21,11 +23,12 @@ import javafx.scene.layout.GridPane;
  * @param <Veci>
  * @param <Postavy>
  * @param <Prikazy>
+ * @param <Vychody>
  * 
  * @authors Filip Vencovsky, Martin Weisser
  *
  */
-public class HomeController<Veci, Postavy, Prikazy> extends GridPane implements Observer {
+public class HomeController<Veci, Postavy, Prikazy, Vychody> extends GridPane implements Observer {
 	
 	@FXML private TextField vstupniText;
 	@FXML private TextArea vystup;
@@ -33,6 +36,8 @@ public class HomeController<Veci, Postavy, Prikazy> extends GridPane implements 
 	@FXML private ListView<Postavy> postavy;
 	@FXML private ListView<Prikazy> prikazy;
 	@FXML private TextArea vycerpani;
+	@FXML private ListView<Vychody>  vychody;
+	@FXML private ImageView student;
 	//@FXML private MenuItem konec;
 	
 	private IHra hra;
@@ -56,6 +61,15 @@ public class HomeController<Veci, Postavy, Prikazy> extends GridPane implements 
 		}*/
 
 	}
+	
+	/**
+	 * metoda vypíše zvolenou hodntu
+	 * do příkazového pole
+	 */
+	@FXML public void zvolenVychod() {
+		vstupniText.appendText(vychody.getSelectionModel().toString());
+	}
+	
 	
 	/**
 	 * metoda napíše příkaz konec do příkazového řádku
@@ -100,6 +114,8 @@ public class HomeController<Veci, Postavy, Prikazy> extends GridPane implements 
 	
 	
 	
+	
+	
 	/**
 	 * Metoda bude soužit pro předání objektu se spuštěnou hrou
 	 * kontroleru a zobrazí stav hry v grafice.
@@ -113,6 +129,8 @@ public class HomeController<Veci, Postavy, Prikazy> extends GridPane implements 
 		this.hra = hra;
 		hra.getHerniPlan().addObserver(this);
 		vstupniText.setText("");
+		student.setX(hra.getHerniPlan().getAktualniLokace().getX());
+		student.setY(hra.getHerniPlan().getAktualniLokace().getY());
 		update(null, hra);
 		
 	}
@@ -125,8 +143,12 @@ public class HomeController<Veci, Postavy, Prikazy> extends GridPane implements 
 		postavy.getItems().add((Postavy) hra.getHerniPlan().getAktualniLokace().seznamPostav());
 		//prikazy.getItems().add((Prikazy) hra.getSeznamPrikazu());
 		vycerpani(hra);
+		vychody.getItems().clear();
+		vychody.getItems().add((Vychody) hra.getHerniPlan().getAktualniLokace().getVychodyNazev());
+		student.setX(hra.getHerniPlan().getAktualniLokace().getX());
+		student.setY(hra.getHerniPlan().getAktualniLokace().getY());
 		
 		
+		}
 	}
 
-}

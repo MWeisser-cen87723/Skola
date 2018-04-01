@@ -43,17 +43,17 @@ public class HerniPlan extends Observable {
      * Jako výchozí aktuální lokaci nastaví domeček.
      */
     private void zalozLokaceHry() {
-        Lokace ucebna = new Lokace("ucebna","počítačová učebna, kde nastal skrat");
-        Lokace chodba = new Lokace("chodba", "chodba");
-        Lokace bufet = new Lokace("bufet","bufet, místo dobrot a laskomin");
-        Lokace wc = new Lokace("wc", "wc - místo, kde voda je vždy zadarmo");
-        Lokace vytah = new Lokace("vytah","pozor! výtah je v době požáru nebezpečný");
-        Lokace schodiste = new Lokace("schodiste", "schodiště");
-        Lokace sklad = new Lokace("sklad","sklad, místo různých předmětů");
-        Lokace aula = new Lokace("aula","aula, srdce školy");
-        Lokace vratnice = new Lokace("vratnice","vrátnice, tajemný koutek pana školníka");
-        Lokace satna = new Lokace("satna","šatna - bunda sem, bunda tam");
-        Lokace vychod = new Lokace(NAZEV_VITEZNE_LOKACE, "východ");
+        Lokace ucebna = new Lokace("ucebna","počítačová učebna, kde nastal skrat", 10.0, 20.0);
+        Lokace chodba = new Lokace("chodba", "chodba", 15.0, 20.0);
+        Lokace bufet = new Lokace("bufet","bufet, místo dobrot a laskomin", 20.0, 20.0);
+        Lokace wc = new Lokace("wc", "wc - místo, kde voda je vždy zadarmo", 30.0, 20.0);
+        Lokace vytah = new Lokace("vytah","pozor! výtah je v době požáru nebezpečný", 40.0, 20.0);
+        Lokace schodiste = new Lokace("schodiste", "schodiště", 50.0, 20.0);
+        Lokace sklad = new Lokace("sklad","sklad, místo různých předmětů", 60.0, 20.0);
+        Lokace aula = new Lokace("aula","aula, srdce školy", 70.0, 20.0);
+        Lokace vratnice = new Lokace("vratnice","vrátnice, tajemný koutek pana školníka", 80.0, 20.0);
+        Lokace satna = new Lokace("satna","šatna - bunda sem, bunda tam", 90.0, 20.0);
+        Lokace vychod = new Lokace(NAZEV_VITEZNE_LOKACE, "východ", 100.0, 20.0);
         
         Predmet kyblik = new Predmet("kyblik", "ideální pro přenos vody", true, false);
         sklad.vlozPredmet(kyblik);

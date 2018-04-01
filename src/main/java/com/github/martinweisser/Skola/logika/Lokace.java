@@ -34,6 +34,10 @@ public class Lokace {
     private Map<String, Postava> postavy;
     public List <Postava> seznamPostav;
     
+    public double x;
+    public double y;
+
+    
 
     /**
      * Vytvoření lokace se zadaným popisem, např. "kuchyň", "hala", "trávník
@@ -42,12 +46,14 @@ public class Lokace {
      * @param    nazev nazev lokace, jednoznačný identifikátor, jedno slovo nebo víceslovný název bez mezer
      * @param    popis Popis lokace
      */
-    public Lokace(String nazev, String popis) {
+    public Lokace(String nazev, String popis, double x, double y) {
         this.nazev = nazev;
         this.popis = popis;
         vychody = new HashSet<>();
         predmety = new HashMap<>();
         postavy = new HashMap<>();
+        this.x = x;
+        this.y = y;
     }
 
     /**
@@ -278,5 +284,33 @@ public class Lokace {
         
     }
     
+    
+    /**
+     * Metoda která vrátí pozici x
+     */
+    public double getX() {
+		return x;
+	}
+
+    /**
+     * Metoda která nastaví pozici x
+     */
+    public void setX(double x) {
+		this.x = x;
+	}
+    
+	/**
+     * Metoda která vrátí pozici y
+     */
+    public double getY() {
+		return y;
+	}
+
+	/**
+     * Metoda která nastaví pozici y
+     */
+    public void setY(double y) {
+		this.y = y;
+	}
        
 }

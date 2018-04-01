@@ -38,8 +38,8 @@ public class LokaceTest
      */
     @Test
     public  void testLzeProjit() {		
-        Lokace lokace1 = new Lokace("hala", "vstupní hala budovy VŠE na Jižním městě");
-        Lokace lokace2 = new Lokace("bufet", "bufet, kam si můžete zajít na svačinku");
+        Lokace lokace1 = new Lokace("hala", "vstupní hala budovy VŠE na Jižním městě", 10.0, 10.0);
+        Lokace lokace2 = new Lokace("bufet", "bufet, kam si můžete zajít na svačinku", 10.0, 10.0);
         lokace1.setVychod(lokace2);
         lokace2.setVychod(lokace1); 
         assertEquals(lokace2, lokace1.vratSousedniLokaci("bufet"));

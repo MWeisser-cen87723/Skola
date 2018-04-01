@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.martinweisser.Skola.ui.HomeController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.martinweisser.Skola.ui.HomeController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -24,9 +24,9 @@
   </columnConstraints>
   <rowConstraints>
     <RowConstraints vgrow="NEVER" />
-    <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
-    <RowConstraints maxHeight="284.2889404296875" minHeight="183.83154296875" prefHeight="265.03753662109375" vgrow="NEVER" />
-      <RowConstraints maxHeight="158.66845703125" minHeight="58.7110595703125" prefHeight="77.96246337890625" vgrow="NEVER" />
+    <RowConstraints maxHeight="522.2728881835938" minHeight="10.0" prefHeight="474.25689697265625" valignment="CENTER" vgrow="ALWAYS" />
+    <RowConstraints maxHeight="360.4734802246094" minHeight="178.22711181640625" prefHeight="222.80218505859375" vgrow="NEVER" />
+      <RowConstraints maxHeight="158.66845703125" minHeight="50.1121826171875" prefHeight="82.19781494140625" vgrow="NEVER" />
   </rowConstraints>
    <children>
       <MenuBar GridPane.columnSpan="3">
@@ -44,9 +44,9 @@
           </Menu>
         </menus>
       </MenuBar>
-      <ImageView fitHeight="217.0" fitWidth="275.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+      <ImageView fitHeight="450.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
          <image>
-            <Image url="@herniPlan.png" />
+            <Image url="@planskoly.png" />
          </image>
          <GridPane.margin>
             <Insets />
@@ -111,11 +111,17 @@
       </TextArea>
       <VBox prefHeight="0.0" prefWidth="294.0" GridPane.rowIndex="3">
          <children>
-            <Label text="Vyber příkaz" />
+            <Label text="Vyber příkaz a východ" />
+            <ListView fx:id="vychody" prefHeight="200.0" prefWidth="200.0" />
          </children>
          <GridPane.margin>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </GridPane.margin>
       </VBox>
+      <ImageView fx:id="student" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@studentik.png" />
+         </image>
+      </ImageView>
    </children>
 </GridPane>
