@@ -20,21 +20,16 @@ import javafx.scene.image.ImageView;
  * Kontroler, který zprostředkovává komunikaci mezi grafikou
  * a logikou adventury
  * @param <Veci>
- * @param <Postavy>
- * @param <Prikazy>
- * @param <Vychody>
  * 
  * @authors Filip Vencovsky, Martin Weisser
  *
  */
-public class HomeController < Veci, Postavy, Prikazy, Vychody > extends GridPane implements Observer {
+public class HomeController < Veci > extends GridPane implements Observer {
 
     @FXML private TextField vstupniText;
     @FXML private TextArea vystup;
     @FXML private ListView < Veci > mistnost;
-    @FXML private ListView < Prikazy > prikazy;
     @FXML private TextArea vycerpani;
-    @FXML private ListView < Vychody > vychody;
     @FXML private ImageView student;
     @FXML private ImageView klice;
     @FXML private ImageView penezenka;
@@ -44,8 +39,6 @@ public class HomeController < Veci, Postavy, Prikazy, Vychody > extends GridPane
     @FXML private ImageView ucitelIm;
 
     private IHra hra;
-
-    //private SeznamPrikazu seznampr;
 
 
 
@@ -58,11 +51,6 @@ public class HomeController < Veci, Postavy, Prikazy, Vychody > extends GridPane
         vystup.appendText("\n----------\n" + vstupniText.getText() + "\n----------\n");
         vystup.appendText(vystupPrikazu);
         vstupniText.setText("");
-
-        /*if(hra.konecHry()) {
-        	vystup.appendText("\n\n Konec hry \n");
-        	vstupniText.setEditable(false);
-        }*/
 
     }
     
@@ -197,7 +185,6 @@ public class HomeController < Veci, Postavy, Prikazy, Vychody > extends GridPane
     public void update(Observable arg0, Object arg1) {
         mistnost.getItems().clear();
         mistnost.getItems().add((Veci) hra.getHerniPlan().getAktualniLokace().seznamPredmetu());
-        //prikazy.getItems().add((Prikazy) hra.getSeznamPrikazu());
         vycerpani(hra);
         student.setX(hra.getHerniPlan().getAktualniLokace().getX());
         student.setY(hra.getHerniPlan().getAktualniLokace().getY());
