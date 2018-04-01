@@ -181,12 +181,26 @@ public class HomeController < Veci, Postavy, Prikazy, Vychody > extends GridPane
 
         if (hra.getHerniPlan().getLedvinka().obsahujePredmet("klice")) {
             klice.setVisible(true);
-        } else if (hra.getHerniPlan().getLedvinka().obsahujePredmet("penezenka")) {
+        } else {
+        		klice.setVisible(false);
+        }
+        	
+        	if (hra.getHerniPlan().getLedvinka().obsahujePredmet("penezenka")) {
             penezenka.setVisible(true);
-        } else if (hra.getHerniPlan().getLedvinka().obsahujePredmet("desetikoruna")) {
+        } else {
+        		penezenka.setVisible(false);
+        }
+        	
+        	if (hra.getHerniPlan().getLedvinka().obsahujePredmet("desetikoruna")) {
             desetikoruna.setVisible(true);
-        } else if (hra.getHerniPlan().getRuka().obsahujePredmet("kyblik")) {
+        } else {
+        		desetikoruna.setVisible(false);
+        }
+        	
+        	if (hra.getHerniPlan().getRuka().obsahujePredmet("kyblik")) {
             kyblik.setVisible(true);
+        } else {
+        		kyblik.setVisible(false);
         }
     }
 
@@ -197,10 +211,16 @@ public class HomeController < Veci, Postavy, Prikazy, Vychody > extends GridPane
      */
     public void updatePostavy() {
 
-        if (hra.getHerniPlan().getAktualniLokace().obsahujePostavu(bufetacka)) {
+        if (hra.getHerniPlan().getAktualniLokace().obsahujePostavu("bufetacka")) {
             bufetackaIm.setVisible(true);
-        } else if (hra.getHerniPlan().getAktualniLokace().obsahujePostavu(ucitel)) {
+        } else {
+        		bufetackaIm.setVisible(false);
+        }
+        	
+        	if (hra.getHerniPlan().getAktualniLokace().obsahujePostavu("ucitel")) {
             ucitelIm.setVisible(true);
+        	} else {
+        		ucitelIm.setVisible(false);
         }
     }
 }
