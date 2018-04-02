@@ -56,7 +56,7 @@ public class Application extends javafx.application.Application {
 		HomeController controller = loader.getController();
 		controller.inicializuj(new  Hra());
 		
-        primaryStage.setTitle("title");
+        primaryStage.setTitle("ZACHRAŇ ŠKOLU!");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
 		

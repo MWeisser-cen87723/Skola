@@ -1,15 +1,15 @@
 package com.github.martinweisser.Skola.ui;
 
 import com.github.martinweisser.Skola.logika.IHra;
-import com.github.martinweisser.Skola.logika.SeznamPrikazu;
 
+import java.awt.Desktop;
+import java.io.File;
+import java.io.IOException;
 import java.util.Observable;
 import java.util.Observer;
 
-import javax.swing.filechooser.FileView;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TextField;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -17,10 +17,11 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
-import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.image.ImageView;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 
 /**
  * Kontroler, který zprostředkovává komunikaci mezi grafikou
@@ -150,9 +151,9 @@ public class HomeController < Veci > extends GridPane implements Observer {
 	@FXML public void about() {
 		Label about = new Label("Hra zachraň školu! \nTextová verze: (c) MW 4.6.2017 \nGrafická verze: (c) MW 2.4.2018");
 
-		StackPane druheOkno = new StackPane();
-		druheOkno.getChildren().add(about);
-		Scene scene = new Scene(druheOkno, 300, 200);
+		StackPane newScene = new StackPane();
+		newScene.getChildren().add(about);
+		Scene scene = new Scene(newScene, 300, 200);
 		Stage newWindow = new Stage();
 		newWindow.setTitle("Hra Zachraň Školu - Nápověda");
 		newWindow.setScene(scene);
@@ -168,8 +169,16 @@ public class HomeController < Veci > extends GridPane implements Observer {
    * metoda otevře soubor napoveda.html
    */
 	@FXML public void napoveda() {
-
-}
+		Stage stage = new Stage();
+        stage.setTitle("Nápověda");
+        
+        WebView webView = new WebView();               
+        webView.getEngine().load(com.github.martinweisser.Skola.main.Start.class.getResource("/zdroje/napoveda.html").toExternalForm());
+        
+        stage.setScene(new Scene(webView, 1200, 650));
+        stage.show();
+	}
+    
 
 	/**
   * Metoda bude soužit pro předání objektu se spuštěnou hrou
@@ -179,7 +188,6 @@ public class HomeController < Veci > extends GridPane implements Observer {
 	public void inicializuj(IHra hra) {
 		vystup.clear();
 		vystup.setText(hra.vratUvitani());
-		//vystup.appendText(hra.vratUvod());
 		vystup.setEditable(false);
 		this.hra = hra;
 		hra.getHerniPlan().addObserver(this);
