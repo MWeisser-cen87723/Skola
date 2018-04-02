@@ -150,8 +150,8 @@ public class HomeController < Veci > extends GridPane implements Observer {
     }
 
     /**
-     * metoda aktualizuje herní reality
-     * zavoláním metody update(null, hra);
+     * metoda otevře stránky předmětu
+     * java.vse.cz
      */
     @FXML public void strankyPredmetu() {
         Desktop desktop = Desktop.getDesktop();
