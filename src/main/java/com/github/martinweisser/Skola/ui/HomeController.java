@@ -5,7 +5,8 @@ import com.github.martinweisser.Skola.logika.IHra;
 
 import java.util.Observable;
 import java.util.Observer;
-
+import java.util.Timer;
+import java.util.TimerTask;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -128,6 +129,13 @@ public class HomeController < Veci > extends GridPane implements Observer {
 		
 		inicializuj(hra);
 	}
+	
+	/**
+	  * metoda napíše příkaz prozkoumej do textového pole
+	  */
+		@FXML public void update() {
+			update(null, hra);
+		}
 
 	/**
   * metoda vypíše do textArea vycerpani

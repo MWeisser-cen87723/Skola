@@ -122,7 +122,7 @@
       <VBox prefHeight="44.0" prefWidth="190.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="3">
          <children>
             <Label text="Zadej příkaz" />
-            <TextField fx:id="vstupniText" onAction="#odesliPrikaz" prefHeight="35.0" prefWidth="626.0" />
+            <TextField fx:id="vstupniText" onAction="#odesliPrikaz" onInputMethodTextChanged="#update" onKeyPressed="#update" onMouseClicked="#update" onTouchPressed="#update" prefHeight="35.0" prefWidth="626.0" />
          </children>
          <GridPane.margin>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
@@ -153,6 +153,7 @@
                         <MenuItem mnemonicParsing="false" onAction="#prikazNapoveda" text="napoveda" />
                     </items>
                   </MenuButton>
+                  <Button layoutX="-2.0" layoutY="17.0" mnemonicParsing="false" onAction="#update" onTouchMoved="#update" text="Aktualizovat" />
                </children>
             </AnchorPane>
          </children>

@@ -4,7 +4,7 @@ package com.github.martinweisser.Skola.logika;
 
 import java.util.Observable;
 
-import com.github.martinweisser.Skola.ui.HomeController;;
+//import com.github.martinweisser.Skola.ui.HomeController;
 
 /**
  * Třída Hra - třída představující logiku adventury.
@@ -47,7 +47,7 @@ public class Hra implements IHra {
      * Vrátí úvodní zprávu pro hráče.
      */
     public String vratUvitani() {
-         return "HRA ZACHRAŇ ŠKOLU" +  "\n" + uvod + "\n";
+         return "HRA ZACHRAŇ ŠKOLU" +  "\n" + uvod + "\n" + herniPlan.getAktualniLokace().dlouhyPopis() + "\n";
          //return "\n" + herniPlan.getAktualniLokace().dlouhyPopis() + "\n" ; //dočasné řešení
     }
     
