@@ -6,6 +6,7 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
@@ -134,24 +135,19 @@
          <children>
             <AnchorPane prefHeight="60.0" prefWidth="287.0">
                <children>
-                  <Label layoutX="76.0" layoutY="14.0" prefHeight="31.0" prefWidth="56.0" text="Vyber:" />
-                  <MenuBar layoutX="124.0" layoutY="18.0">
-                    <menus>
-                      <Menu mnemonicParsing="false" text="Příkaz">
-                        <items>
-                          <MenuItem mnemonicParsing="false" onAction="#prikazJdi" text="jdi" />
-                              <MenuItem mnemonicParsing="false" onAction="#prikazVezmi" text="vezmi" />
-                              <MenuItem mnemonicParsing="false" onAction="#prikazZahod" text="zahod" />
-                              <MenuItem mnemonicParsing="false" onAction="#prikazPromluv" text="promluv" />
-                              <MenuItem mnemonicParsing="false" onAction="#prikazPouzij" text="pouzij" />
-                              <MenuItem mnemonicParsing="false" onAction="#prikazProzkoumej" text="prozkoumej" />
-                              <MenuItem mnemonicParsing="false" onAction="#prikazNapoveda" text="napoveda" />
-                              <MenuItem mnemonicParsing="false" onAction="#prikazKonec" text="konec" />
-                        </items>
-                      </Menu>
-                    </menus>
-                  </MenuBar>
-                  <Button layoutX="256.0" layoutY="12.0" mnemonicParsing="false" onAction="#odesliPrikaz" text="OK" />
+                  <Button layoutX="249.0" layoutY="16.0" mnemonicParsing="false" onAction="#odesliPrikaz" text="OK" />
+                  <MenuButton layoutX="115.0" layoutY="17.0" mnemonicParsing="false" text="Vyber příkaz">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#prikazKonec" text="konec" />
+                        <MenuItem mnemonicParsing="false" onAction="#prikazZahod" text="zahod" />
+                        <MenuItem mnemonicParsing="false" onAction="#prikazJdi" text="jdi" />
+                        <MenuItem mnemonicParsing="false" onAction="#prikazPromluv" text="promluv" />
+                        <MenuItem mnemonicParsing="false" onAction="#prikazProzkoumej" text="prozkoumej" />
+                        <MenuItem mnemonicParsing="false" onAction="#prikazPouzij" text="pouzij" />
+                        <MenuItem mnemonicParsing="false" onAction="#prikazVezmi" text="vezmi" />
+                        <MenuItem mnemonicParsing="false" onAction="#prikazNapoveda" text="napoveda" />
+                    </items>
+                  </MenuButton>
                </children>
             </AnchorPane>
          </children>
