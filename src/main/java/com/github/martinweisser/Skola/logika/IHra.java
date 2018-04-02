@@ -58,12 +58,13 @@ public interface IHra
      */
      public HerniPlan getHerniPlan();
      
-    // public void Hra();
+   
      
-    
+
+     /**
+      * Metoda ukončí hru
+      */
      public void setKonecHry(boolean konecHry);
-     
-     public SeznamPrikazu getSeznamPrikazu();
      
      
 }

@@ -5,12 +5,10 @@ import com.github.martinweisser.Skola.logika.SeznamPrikazu;
 
 import java.util.Observable;
 import java.util.Observer;
-//import java.util.Vector;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ListView;
-//import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.GridPane;
 import javafx.scene.image.ImageView;
@@ -48,7 +46,7 @@ public class HomeController < Veci > extends GridPane implements Observer {
      */
     @FXML public void odesliPrikaz() {
         String vystupPrikazu = hra.zpracujPrikaz(vstupniText.getText());
-        vystup.appendText("\n----------\n" + vstupniText.getText() + "\n----------\n");
+        vystup.appendText("\n\n> Zadal jsi příkaz: " + vstupniText.getText() + "\n ");
         vystup.appendText(vystupPrikazu);
         vstupniText.setText("");
 
@@ -118,7 +116,7 @@ public class HomeController < Veci > extends GridPane implements Observer {
      */
     @FXML public void konecHry() {
         hra.setKonecHry(true);
-        vystup.appendText("\n\n Konec hry \n");
+        vystup.appendText("\n\nUkončil jsi hru!\nNovou hru můžeš začít přes Hra > Nová hra");
         vstupniText.setEditable(false);
     }
 

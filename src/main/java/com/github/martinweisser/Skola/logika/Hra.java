@@ -139,9 +139,6 @@ public class Hra implements IHra {
         return herniPlan;
      }
      
-     public SeznamPrikazu getSeznamPrikazu() {
-    	 	return platnePrikazy;
-     }
-    
+     
 }
 

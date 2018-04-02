@@ -139,7 +139,7 @@ public class Lokace {
     }
     
     public String seznamPredmetu() {
-        String seznam = "predmety: ";
+        String seznam = "Předměty: ";
         for(String nazevPredmetu : predmety.keySet()) {
             seznam += " " + nazevPredmetu;
         }
@@ -147,7 +147,7 @@ public class Lokace {
     }
     
     public String seznamPostav(){
-        String seznam = "postavy: ";
+        String seznam = "Postavy: ";
         for(String jmenoPostavy : postavy.keySet()) {
             seznam += " " + jmenoPostavy;
         }
@@ -161,7 +161,7 @@ public class Lokace {
      * @return    popis východů - názvů sousedních lokací
      */
     private String popisVychodu() {
-        String vracenyText = "vychody: ";
+        String vracenyText = "Východy: ";
         for (Lokace sousedni : vychody) {
             vracenyText += " " + sousedni.getNazev();
         }
