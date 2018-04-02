@@ -2,9 +2,7 @@ package com.github.martinweisser.Skola.ui;
 
 import com.github.martinweisser.Skola.logika.IHra;
 
-import java.awt.Desktop;
-import java.io.File;
-import java.io.IOException;
+
 import java.util.Observable;
 import java.util.Observer;
 
@@ -20,7 +18,6 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.image.ImageView;
-import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 
 /**
@@ -125,8 +122,10 @@ public class HomeController < Veci > extends GridPane implements Observer {
 		hra.getHerniPlan().getRuka().seznamPredmetu.clear();
 		hra.getHerniPlan().zalozLokaceHry();
 		hra.getHerniPlan().setPruchod();
+		
 		vstupniText.setEditable(true);
 		vystup.setText(hra.vratUvitani());
+		
 		inicializuj(hra);
 	}
 
@@ -155,6 +154,7 @@ public class HomeController < Veci > extends GridPane implements Observer {
 		newScene.getChildren().add(about);
 		Scene scene = new Scene(newScene, 300, 200);
 		Stage newWindow = new Stage();
+		
 		newWindow.setTitle("O vývojáři");
 		newWindow.setScene(scene);
 		newWindow.setAlwaysOnTop(true);
@@ -189,11 +189,15 @@ public class HomeController < Veci > extends GridPane implements Observer {
 		vystup.clear();
 		vystup.setText(hra.vratUvitani());
 		vystup.setEditable(false);
+		
 		this.hra = hra;
 		hra.getHerniPlan().addObserver(this);
+		
 		vstupniText.setText("");
+		
 		student.setX(hra.getHerniPlan().getAktualniLokace().getX());
 		student.setY(hra.getHerniPlan().getAktualniLokace().getY());
+		
 		update(null, hra);
 
 	}
@@ -202,9 +206,12 @@ public class HomeController < Veci > extends GridPane implements Observer {
 	public void update(Observable arg0, Object arg1) {
 		mistnost.getItems().clear();
 		mistnost.getItems().add((Veci) hra.getHerniPlan().getAktualniLokace().seznamPredmetu());
+		
 		vycerpani(hra);
+		
 		student.setX(hra.getHerniPlan().getAktualniLokace().getX());
 		student.setY(hra.getHerniPlan().getAktualniLokace().getY());
+		
 		updatePostavy();
 		updatePredmety();
 	}
