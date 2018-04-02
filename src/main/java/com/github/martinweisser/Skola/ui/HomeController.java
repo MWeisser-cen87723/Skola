@@ -5,8 +5,6 @@ import com.github.martinweisser.Skola.logika.IHra;
 
 import java.util.Observable;
 import java.util.Observer;
-import java.util.Timer;
-import java.util.TimerTask;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -209,7 +207,10 @@ public class HomeController < Veci > extends GridPane implements Observer {
 		update(null, hra);
 
 	}
-
+	/**
+	  * Metoda slouží k aktualizaci herních
+	  * realit (pozice, predmety, postavy)
+	  */
 	@Override
 	public void update(Observable arg0, Object arg1) {
 		mistnost.getItems().clear();
