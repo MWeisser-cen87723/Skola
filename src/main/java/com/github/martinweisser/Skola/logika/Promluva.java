@@ -14,9 +14,7 @@ import java.util.*;
 public class Promluva
 {
     
-    private static final String String = null;
 	HerniPlan plan = new HerniPlan();
-	private java.lang.String ucitelPromluva;
            
     /**
      * Tato specifická metoda vrací rozhovor dvou osob a to způsobem,
@@ -24,7 +22,7 @@ public class Promluva
      * jedno za druhým, vypíše s tím, že mezi jednotlivými výpisy
      * je pauza.
      */
-    public String vratPromluvuBufetackaDva()
+    public String vratPromluvuBufetackaPostupne()
     {
         System.out.println("Ty: ");
         String ty = "Pani bufetacko! Ve skole hori! Je potreba, abyste ihned opustila budovu!\n" +
@@ -64,7 +62,7 @@ public class Promluva
      * jedno za druhým, vypíše s tím, že mezi jednotlivými výpisy
      * je pauza.
      */
-    public String vratPromluvuUcitelDva()
+    public String vratPromluvuUcitelPostupne()
     {
         System.out.println("Ty: ")       ;
         String ty = "Pane uciteli! Ve skole hori! Je potreba, abyste okamzite opustil budovu!" + 
@@ -103,14 +101,8 @@ public class Promluva
      
     public String vratPromluvuUcitel()
     {
-        String ty = "Ty: ";
-        String tvojePromluva = "Pane uciteli! Ve skole hori! Je potreba, abyste okamzite opustil budovu!";
-        String ucitelPromluva = "Ucitel: Nezbedna prace elektroinstalateru a pak to takhle dopada! Dekuji za varovani! Okamzite bezim k vychodu! Opatruj se!";
-        
-        plan.setUcitel();
-        
-        String promluvaUcitel = ty + tvojePromluva + ucitelPromluva;
-        return promluvaUcitel;
+        return "\nTy: Pane uciteli! Ve skole hori! Je potreba, abyste okamzite opustil budovu!\n"
+        				+ "Ucitel: Dekuji za varovani! Okamzite bezim k vychodu! Opatruj se!\n\n";
     }
     
     /**
@@ -119,14 +111,8 @@ public class Promluva
      
     public String vratPromluvuBufetacka()
     {
-        String ty = "Ty: ";
-        String tvojePromluva = "Pani bufetacko! Ve skole hori! Je potreba, abyste ihned opustila budovu!";
-        String ucitelPromluva = "Bufetacka: Ihned utikam k vychodu! Dekuji za upozorneni!";
-        
-        plan.setUcitel();
-        
-        String promluvaUcitel = ty + tvojePromluva + ucitelPromluva;
-        return promluvaUcitel;
+        return "\nTy: Pani bufetacko! Ve skole hori! Je potreba, abyste ihned opustila budovu!\n"
+        			+ "Bufetacka: Ihned utikam k vychodu! Dekuji za upozorneni!\n\n";
     }
        
 

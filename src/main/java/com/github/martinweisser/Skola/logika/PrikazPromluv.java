@@ -55,15 +55,18 @@ public class PrikazPromluv implements IPrikaz
         {
             promluva.vratPromluvuUcitel();
             aktLokace.zahodPostavu(jmenoPostavy);
+            hPlan.setUcitel();
             
-            return "Premluvil jsi ucitele k opusteni budovy!";
+            return "\nPremluvil jsi ucitele k opusteni budovy!";
         }
         
         if(jmenoPostavy.equals("bufetacka"))
         {
             promluva.vratPromluvuBufetacka();
             aktLokace.zahodPostavu(jmenoPostavy);
-            return "Premluvil jsi bufetacku k opusteni budovy!";
+            hPlan.setBufetacka();
+            
+            return "\nPremluvil jsi bufetacku k opusteni budovy!";
         }
         
         return "Nepodarilo se promluvit!";
