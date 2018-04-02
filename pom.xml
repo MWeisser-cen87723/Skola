@@ -44,7 +44,7 @@
 					<archive>
 						<manifest>
 							<addClasspath>true</addClasspath>
-							<mainClass>com.github.martinweisser.Skola.main.Start</mainClass>
+							<mainClass>com.github.martinweisser.Skola.main.Application</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
