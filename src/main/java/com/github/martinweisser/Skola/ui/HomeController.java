@@ -50,21 +50,21 @@ public class HomeController < Veci > extends GridPane implements Observer {
   * metoda napíše příkaz vezmi do textového pole
   */
 	@FXML public void prikazVezmi() {
-		vstupniText.setText("vezmi");
+		vstupniText.setText("vezmi ");
 	}
 
 	/**
   * metoda napíše příkaz jdi do textového pole
   */
 	@FXML public void prikazJdi() {
-		vstupniText.setText("jdi");
+		vstupniText.setText("jdi ");
 	}
 
 	/**
   * metoda napíše příkaz použij do textového pole
   */
 	@FXML public void prikazPouzij() {
-		vstupniText.setText("pouzij");
+		vstupniText.setText("pouzij ");
 	}
 
 	/**
@@ -92,7 +92,7 @@ public class HomeController < Veci > extends GridPane implements Observer {
   * metoda napíše příkaz zahod do textového pole
   */
 	@FXML public void prikazZahod() {
-		vstupniText.setText("zahod");
+		vstupniText.setText("zahod ");
 	}
 
 	/**

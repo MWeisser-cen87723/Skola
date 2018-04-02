@@ -27,6 +27,7 @@ public class HerniPlan extends Observable {
     public boolean naplneny;
     public boolean bufetackaVenku;
     public boolean ucitelVenku;
+    public boolean konec;
     
     
     /**
@@ -135,6 +136,7 @@ public class HerniPlan extends Observable {
         bufetackaVenku = false;
         ucitelVenku = false;
         naplneny = false;
+        konec = false; //dočasné řešení
         
 
         aktualniLokace = ucebna;  
@@ -160,14 +162,30 @@ public class HerniPlan extends Observable {
        setChanged();
        notifyObservers();
     }
-    
+    /*
     /**
      * Metoda nastaví aktuální lokaci, používá se nejčastěji při přechodu mezi lokacemi
      *
      * @param    lokace nová aktuální lokace
      */
-    public boolean hracVyhral() {
+    /*public boolean hracVyhral() {
+    		
         return aktualniLokace.getNazev().equals(NAZEV_VITEZNE_LOKACE);
+    }*/
+    
+    /**
+     * Metoda vrací, jestli je hrac vyhral
+     */
+    public boolean hracVyhral( ) {
+    		return konec;
+    }
+    
+    /**
+     * Metoda nastavuje, jestli hrac vyhral
+     */
+    public void setKonec(boolean konec)
+    {
+        
     }
     
     /**

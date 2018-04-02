@@ -73,11 +73,11 @@ public class Hra implements IHra {
      * Vrátí závěrečnou zprávu pro hráče. -- výhra/prohra
      */
     public String vratEpilog() {
-        if(herniPlan.hracVyhral()) {
+        if(herniPlan.konec = true) {
             return "\nJsi BOREC! Vyhral jsi! Zachranil jsi skolu!"
                     +  "\nDiky za vybornou hru! AHOJ!"
                     +  "\n"
-                    +  "\nMW STUDIO, 2017";
+                    +  "\nMW STUDIO, 2018";
         }
         
         return "Dík, že jste si zahráli.  Ahoj.";
@@ -111,7 +111,8 @@ public class Hra implements IHra {
             textKVypsani = prikaz.proved(parametry);
             
             if(herniPlan.hracVyhral()) {
-                konecHry = true;
+                //konecHry = true;
+            		setKonecHry(true);
             }
         }
         else {

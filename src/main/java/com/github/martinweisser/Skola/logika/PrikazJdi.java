@@ -103,7 +103,7 @@ class PrikazJdi implements IPrikaz {
         
         if(sousedniLokace.getNazev().equals("satna"))
         {
-            if(!plan.jestliHori() &&  !plan.hua() && !plan.jestliBufetacka() && !plan.jestliUcitel()) {
+            if(!plan.jestliHori() && !plan.jestliBufetacka() && !plan.jestliUcitel()) {
             plan.prechazeni();
             plan.setAktualniLokace(sousedniLokace);
             return sousedniLokace.dlouhyPopis() + mira + plan.getPruchod();
@@ -112,14 +112,18 @@ class PrikazJdi implements IPrikaz {
             return "Jsi si jisty, ze v budouve uz nejsou zadne osoby, hlavni uzaver elektriny je vypnuty a ohen uhasen?";
            }}
         
+        if(sousedniLokace.getNazev().equals("vychod")) {
+        		plan.setKonec(true);
+    			return hra.vratEpilog();
+        }
                
         else {
             plan.prechazeni();
             plan.setAktualniLokace(sousedniLokace);
             return sousedniLokace.dlouhyPopis() + mira + plan.getPruchod();
         }
-         
     }
+    
 
     /**
      * Metoda vrací název příkazu, který můžeme zadat na konzoli
