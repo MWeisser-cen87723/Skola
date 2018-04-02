@@ -155,7 +155,7 @@ public class HomeController < Veci > extends GridPane implements Observer {
 		newScene.getChildren().add(about);
 		Scene scene = new Scene(newScene, 300, 200);
 		Stage newWindow = new Stage();
-		newWindow.setTitle("Hra Zachraň Školu - Nápověda");
+		newWindow.setTitle("O vývojáři");
 		newWindow.setScene(scene);
 		newWindow.setAlwaysOnTop(true);
 		newWindow.centerOnScreen();
@@ -173,9 +173,9 @@ public class HomeController < Veci > extends GridPane implements Observer {
         stage.setTitle("Nápověda");
         
         WebView webView = new WebView();               
-        webView.getEngine().load(com.github.martinweisser.Skola.main.Start.class.getResource("/resources/napoveda.html").toExternalForm());
+        webView.getEngine().load(com.github.martinweisser.Skola.main.Start.class.getResource("/napoveda.html").toExternalForm());
         
-        stage.setScene(new Scene(webView, 1200, 650));
+        stage.setScene(new Scene(webView, 500, 500));
         stage.show();
 	}
     
