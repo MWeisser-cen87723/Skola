@@ -250,6 +250,10 @@ public class HomeController < Veci > extends GridPane implements Observer {
 
         updatePostavy();
         updatePredmety();
+        
+        if (hra.konecHry()) {
+        		vstupniText.setEditable(false);
+        }
     }
 
     /**

@@ -103,13 +103,13 @@ class PrikazJdi implements IPrikaz {
         
         if(sousedniLokace.getNazev().equals("satna"))
         {
-            if(!plan.jestliHori() && !plan.jestliBufetacka() && !plan.jestliUcitel()) {
-            plan.prechazeni();
-            plan.setAktualniLokace(sousedniLokace);
-            return sousedniLokace.dlouhyPopis() + mira + plan.getPruchod();
+            if(plan.jestliHori() || plan.jestliBufetacka() || plan.jestliUcitel()) {
+            		return "Jsi si jisty, ze v budouve uz nejsou zadne osoby, hlavni uzaver elektriny je vypnuty a ohen uhasen?";
            }
              else {
-            return "Jsi si jisty, ze v budouve uz nejsou zadne osoby, hlavni uzaver elektriny je vypnuty a ohen uhasen?";
+            	 	 plan.prechazeni();
+                 plan.setAktualniLokace(sousedniLokace);
+                 return sousedniLokace.dlouhyPopis() + mira + plan.getPruchod();
            }}
         
         if(sousedniLokace.getNazev().equals("vychod")) {
