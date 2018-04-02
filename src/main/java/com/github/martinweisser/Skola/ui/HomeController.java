@@ -2,7 +2,10 @@ package com.github.martinweisser.Skola.ui;
 
 import com.github.martinweisser.Skola.logika.IHra;
 
-
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -100,7 +103,7 @@ public class HomeController < Veci > extends GridPane implements Observer {
 	@FXML public void prikazProzkoumej() {
 		vstupniText.setText("prozkoumej");
 	}
-
+	
 	/**
   * metoda napíše příkaz konec do příkazového řádku
   * a zavolá matedu na zpracování příkazu
@@ -129,11 +132,25 @@ public class HomeController < Veci > extends GridPane implements Observer {
 	}
 	
 	/**
-	  * metoda napíše příkaz prozkoumej do textového pole
+	  * metoda aktualizuje herní reality
+	  * zavoláním metody update(null, hra);
 	  */
 		@FXML public void update() {
 			update(null, hra);
 		}
+		
+		/**
+		  * metoda aktualizuje herní reality
+		  * zavoláním metody update(null, hra);
+		  */
+			@FXML public void strankyPredmetu() {
+		Desktop desktop = Desktop.getDesktop();
+		try {
+		    desktop.browse(new URI("http://java.vse.cz"));
+		} catch (IOException | URISyntaxException e2) {
+		    e2.printStackTrace();
+		} 
+			}
 
 	/**
   * metoda vypíše do textArea vycerpani

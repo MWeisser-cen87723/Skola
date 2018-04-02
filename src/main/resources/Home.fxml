@@ -153,7 +153,11 @@
                         <MenuItem mnemonicParsing="false" onAction="#prikazNapoveda" text="napoveda" />
                     </items>
                   </MenuButton>
-                  <Button layoutX="-2.0" layoutY="17.0" mnemonicParsing="false" onAction="#update" onTouchMoved="#update" text="Aktualizovat" />
+                  <Button layoutX="-2.0" layoutY="30.0" mnemonicParsing="false" onAction="#strankyPredmetu" onTouchMoved="#update" prefHeight="14.0" prefWidth="75.0" text="JAVA.VSE.CZ" textFill="#8a8383">
+                     <font>
+                        <Font size="8.0" />
+                     </font>
+                  </Button>
                </children>
             </AnchorPane>
          </children>
