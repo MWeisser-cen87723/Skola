@@ -39,9 +39,10 @@
               <MenuItem mnemonicParsing="false" onAction="#konecHry" onMenuValidation="#konecHry" text="Konec Hry" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Nápověda">
+          <Menu mnemonicParsing="false" text="O hře">
             <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem mnemonicParsing="false" onAction="#napoveda" text="Nápověda" />
+                  <MenuItem mnemonicParsing="false" onAction="#about" text="O vývojáři" />
             </items>
           </Menu>
         </menus>
