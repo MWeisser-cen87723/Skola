@@ -37,21 +37,25 @@ public class Hra implements IHra {
         platnePrikazy.vlozPrikaz(new PrikazZahod(herniPlan));
         platnePrikazy.vlozPrikaz(new PrikazPromluv(herniPlan));
     }
+    
+    String uvod = "\n" + "Ach né! V počítačové účebně nastal skrat a začlo hořet!\n" +
+            "Dokážeš uhasit oheň a zachránit všechny osoby v budově?" + "\n" +
+            "Ukaž, co v tobě je!" + "\n" +
+            "Držím palce :)" + "\n" ;
 
     /**
      * Vrátí úvodní zprávu pro hráče.
      */
     public String vratUvitani() {
-         //return "HRA ZACHRAŇ ŠKOLU" +  "\n";
-         return "\n" + herniPlan.getAktualniLokace().dlouhyPopis() + "\n" ; //dočasné řešení
+         return "HRA ZACHRAŇ ŠKOLU" +  "\n" + uvod + "\n";
+         //return "\n" + herniPlan.getAktualniLokace().dlouhyPopis() + "\n" ; //dočasné řešení
     }
     
+    /*Zde se kvůli problému s vypsáním v okně aplikaci, nikoliv na konzoli přistoupilo
+    k náhradním řešení, že se string uvod přesunul do vratUvitani*/
+    
     public String vratUvod() {
-        String uvod = "\n" + "Ach né! V počítačové účebně nastal skrat a začlo hořet!\n" +
-                      "Dokážeš uhasit oheň a zachránit všechny osoby v budově?" + "\n" +
-                      "Ukaž, co v tobě je!" + "\n" +
-                      "Držím palce :)" + "\n" ;
-                      
+                    
         try {
             char[] pismena = uvod.toCharArray();
             for (int i = 0; i < pismena.length; i++) {
@@ -62,7 +66,7 @@ public class Hra implements IHra {
              Thread.currentThread().interrupt();
         }
          return null;
-        //return "\n" + herniPlan.getAktualniLokace().dlouhyPopis() + "\n" ;
+       //return "\n" + herniPlan.getAktualniLokace().dlouhyPopis() + "\n"
     }
        
     /**

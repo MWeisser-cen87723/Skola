@@ -8,9 +8,14 @@ import java.util.Observer;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import javafx.scene.image.ImageView;
 
 
@@ -150,6 +155,31 @@ public class HomeController < Veci > extends GridPane implements Observer {
         }
     }
 
+    
+    @FXML public void uvodniOkno() {
+    	  Label vitejLabel = new Label("Vítej ve hře!");
+    	  
+          StackPane druheOkno = new StackPane();
+          druheOkno.getChildren().add(vitejLabel);
+
+          Scene secondScene = new Scene(druheOkno, 230, 100);
+
+          Stage newWindow = new Stage();
+          newWindow.setTitle("Hra Zachraň Školu");
+          newWindow.setAlwaysOnTop(true);
+          newWindow.centerOnScreen();
+          newWindow.setScene(secondScene);
+
+          newWindow.initModality(Modality.WINDOW_MODAL);
+
+          //newWindow.initOwner(inicializuj);
+
+          // Set position of second window, related to primary window.
+          //newWindow.setX(inicializuj.getX() + 200);
+          //newWindow.setY(inicializuj.getY() + 100);
+
+          newWindow.show();
+}
 
     /*
     public void noveOkno() {
