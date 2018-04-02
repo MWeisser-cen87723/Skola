@@ -173,7 +173,7 @@ public class HomeController < Veci > extends GridPane implements Observer {
         stage.setTitle("Nápověda");
         
         WebView webView = new WebView();               
-        webView.getEngine().load(com.github.martinweisser.Skola.main.Start.class.getResource("/zdroje/napoveda.html").toExternalForm());
+        webView.getEngine().load(com.github.martinweisser.Skola.main.Start.class.getResource("/resources/napoveda.html").toExternalForm());
         
         stage.setScene(new Scene(webView, 1200, 650));
         stage.show();

@@ -2,6 +2,7 @@ package com.github.martinweisser.Skola.ui;
 
 import com.github.martinweisser.Skola.logika.Hra;
 import com.github.martinweisser.Skola.logika.IHra;
+import com.github.martinweisser.Skola.*;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -50,7 +51,7 @@ public class Application extends javafx.application.Application {
 		
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(getClass()
-		          .getResource("Home.fxml"));
+		          .getResource("/Home.fxml"));
 		Parent root = loader.load();
 
 		HomeController controller = loader.getController();
